@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/user/login`, {
+      const response = await fetch(`https://next-market2-taupe.vercel.app/api/user/login`, {
         method: 'POST',
         headers: {
           "Accept": "application/json",

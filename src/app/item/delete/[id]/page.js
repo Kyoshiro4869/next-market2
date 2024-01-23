@@ -15,7 +15,7 @@ const DeleteItem = (context) => {
 
     useEffect(() => {
         const getSingleItem = async(id) => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"}) 
+            const response = await fetch(`https://next-market2-taupe.vercel.app/api/item/readsingle/${id}`, {cache: "no-store"}) 
             const jsonData = await response.json() 
             const singleItem = jsonData.singleItem         
             setTitle(singleItem.title)
