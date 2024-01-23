@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 const getAllItems = async() => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readall`, {cache: "no-store"})
+    const response = await fetch(`https://next-market2-taupe.vercel.app/api/item/readall`, {cache: "no-store"})
     if (!response.ok) {
         console.error(`API request failed with status ${response.status}`);
         throw new Error('Failed to fetch');
