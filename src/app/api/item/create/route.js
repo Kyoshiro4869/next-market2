@@ -10,6 +10,7 @@ export async function POST(request){
 
   try{
   await connectDB();
+  console.log(reqbody);
   await ItemModel.create(reqbody);
   return NextResponse.json({message:"アイテム作成成功"});
 

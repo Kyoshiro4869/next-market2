@@ -5,7 +5,9 @@ import {NextRequest} from 'next/server'
 import {jwtVerify} from "jose";
 
 
-export async function middleware(response, request){
+export async function middleware(request,response){
+  console.log(request);
+
   const token = await request.headers.get("Authorization")?.split(" ")[1];
 
   if(!token){
@@ -14,7 +16,7 @@ export async function middleware(response, request){
 
   try{
     const secretKey = new TextEncoder().encode("next-market-app-book");
-    const decodedJwt = jwtVerify(token,secretKey);
+    const decodedJwt = await jwtVerify(token,secretKey);
     console.log("decodedJwt",decodedJwt);
     return NextResponse.next();
   } catch (err) {
